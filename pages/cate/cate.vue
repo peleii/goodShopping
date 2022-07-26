@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="top">
+			<search @click="goToSearch"></search>
+		</view>
 		<view class="cate_ontainer">
 			<view class="sideBar">
 				<scroll-view scroll-y="true" :style="{height:wh+'px'}">
@@ -60,7 +63,12 @@
 				uni.navigateTo({
 					url:'/subpkg/goods_list/goods_list?cat_id='+i.cat_id
 				})
-			}
+			},
+			goToSearch() {
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
+			},
 		},
 		onLoad(){
 			// 获取可用高度
@@ -74,6 +82,11 @@
 </script>
 
 <style lang="scss">
+	.top{
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
 	.cate_ontainer{
 		display: flex;
 		.sideBar{

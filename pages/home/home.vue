@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="top">
+			<search @click="goToSearch"></search>
+		</view>
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" style="height: 330rpx;">
 			<swiper-item v-for="(item,index) in swiperList" :key="index" @tap='goToDetail(item.goods_id)'>
@@ -81,7 +84,17 @@
 						// uni.$showMsg("数据请求成功")
 					}
 				})
-			}
+			},
+			goToSearch() {
+				// uni.showToast({
+				// 	title: '搜索：' + res.value,
+				// 	icon: 'none'
+				// })
+				console.log('1111')
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
+			},
 			
 		},
 		onLoad(){
@@ -93,6 +106,11 @@
 </script>
 
 <style lang="scss" scoped>
+	.top{
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
 	.swiper-item image{
 		width: 100%;
 	}
