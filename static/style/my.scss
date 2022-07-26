@@ -1,0 +1,24 @@
+.margin-top-sm{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.margin-top-md{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.margin-sm{
+	margin: 15px;
+}
+.flex{
+	display: flex;	
+}
+.space-around{
+	justify-content: space-around;
+}
+.space-between{
+	justify-content: space-between;
+	
+}
+.wrap{
+	flex-flow: wrap;
+}
